@@ -1,0 +1,16 @@
+D:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\HMI_KUKA_TSM\HMI_KUKA_TSM\HMI_KUKA_TSM\obj\Debug\HMI_KUKA_TSM.HMI_Class.resources
+D:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\HMI_KUKA_TSM\HMI_KUKA_TSM\HMI_KUKA_TSM\obj\Debug\HMI_KUKA_TSM.csproj.GenerateResource.Cache
+D:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\HMI_KUKA_TSM\HMI_KUKA_TSM\HMI_KUKA_TSM\bin\Debug\HMI_KUKA_TSM.dll
+D:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\HMI_KUKA_TSM\HMI_KUKA_TSM\HMI_KUKA_TSM\bin\Debug\HMI_KUKA_TSM.pdb
+D:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\HMI_KUKA_TSM\HMI_KUKA_TSM\HMI_KUKA_TSM\obj\Debug\HMI_KUKA_TSM.dll
+D:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\HMI_KUKA_TSM\HMI_KUKA_TSM\HMI_KUKA_TSM\obj\Debug\HMI_KUKA_TSM.pdb
+E:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\HMI_KUKA_TSM_NOT_PLC\HMI_KUKA_TSM\HMI_KUKA_TSM\bin\Debug\HMI_KUKA_TSM.dll
+E:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\HMI_KUKA_TSM_NOT_PLC\HMI_KUKA_TSM\HMI_KUKA_TSM\bin\Debug\HMI_KUKA_TSM.pdb
+E:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\HMI_KUKA_TSM_NOT_PLC\HMI_KUKA_TSM\HMI_KUKA_TSM\bin\Debug\S7.Net.dll
+E:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\HMI_KUKA_TSM_NOT_PLC\HMI_KUKA_TSM\HMI_KUKA_TSM\bin\Debug\S7.Net.xml
+E:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\HMI_KUKA_TSM_NOT_PLC\HMI_KUKA_TSM\HMI_KUKA_TSM\obj\Debug\HMI_KUKA_TSM.csprojResolveAssemblyReference.cache
+E:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\HMI_KUKA_TSM_NOT_PLC\HMI_KUKA_TSM\HMI_KUKA_TSM\obj\Debug\HMI_KUKA_TSM.HMI_Class.resources
+E:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\HMI_KUKA_TSM_NOT_PLC\HMI_KUKA_TSM\HMI_KUKA_TSM\obj\Debug\HMI_KUKA_TSM.Properties.Resources.resources
+E:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\HMI_KUKA_TSM_NOT_PLC\HMI_KUKA_TSM\HMI_KUKA_TSM\obj\Debug\HMI_KUKA_TSM.csproj.GenerateResource.Cache
+E:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\HMI_KUKA_TSM_NOT_PLC\HMI_KUKA_TSM\HMI_KUKA_TSM\obj\Debug\HMI_KUKA_TSM.dll
+E:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\HMI_KUKA_TSM_NOT_PLC\HMI_KUKA_TSM\HMI_KUKA_TSM\obj\Debug\HMI_KUKA_TSM.pdb
