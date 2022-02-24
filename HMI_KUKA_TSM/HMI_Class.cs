@@ -63,6 +63,8 @@ namespace HMI_KUKA_TSM
         Panel[] panelSteps;
         string[] labelVarStep;
         private Button StartBut;
+        private Button But_Reset_Step_E3;
+        private Button But_Reset_Step_E2;
         int numElementStep = 0;
 
         public HMI_Class(DispMode displayMode, CmdBarMode commandBarMode) : base(displayMode, commandBarMode)
@@ -78,6 +80,9 @@ namespace HMI_KUKA_TSM
             this.Main_panel = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.But_Reset_Step_E3 = new System.Windows.Forms.Button();
+            this.But_Reset_Step_E2 = new System.Windows.Forms.Button();
+            this.StartBut = new System.Windows.Forms.Button();
             this.App_run = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.State_Light = new System.Windows.Forms.Panel();
@@ -105,7 +110,6 @@ namespace HMI_KUKA_TSM
             this.stepsE2 = new System.Windows.Forms.TabPage();
             this.stepsE3 = new System.Windows.Forms.TabPage();
             this.label16 = new System.Windows.Forms.Label();
-            this.StartBut = new System.Windows.Forms.Button();
             this.childPanel.SuspendLayout();
             this.Main_panel.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -158,11 +162,12 @@ namespace HMI_KUKA_TSM
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(518, 682);
             this.tabControl1.TabIndex = 0;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.LightGray;
+            this.tabPage1.Controls.Add(this.But_Reset_Step_E3);
+            this.tabPage1.Controls.Add(this.But_Reset_Step_E2);
             this.tabPage1.Controls.Add(this.StartBut);
             this.tabPage1.Controls.Add(this.App_run);
             this.tabPage1.Controls.Add(this.label2);
@@ -194,6 +199,37 @@ namespace HMI_KUKA_TSM
             this.tabPage1.Size = new System.Drawing.Size(510, 635);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Основные";
+            // 
+            // But_Reset_Step_E3
+            // 
+            this.But_Reset_Step_E3.Location = new System.Drawing.Point(381, 574);
+            this.But_Reset_Step_E3.Name = "But_Reset_Step_E3";
+            this.But_Reset_Step_E3.Size = new System.Drawing.Size(123, 55);
+            this.But_Reset_Step_E3.TabIndex = 70;
+            this.But_Reset_Step_E3.Text = "Сброс шагов Е3";
+            this.But_Reset_Step_E3.UseVisualStyleBackColor = true;
+            this.But_Reset_Step_E3.Click += new System.EventHandler(this.But_Reset_Step_E3_Click);
+            // 
+            // But_Reset_Step_E2
+            // 
+            this.But_Reset_Step_E2.Location = new System.Drawing.Point(252, 574);
+            this.But_Reset_Step_E2.Name = "But_Reset_Step_E2";
+            this.But_Reset_Step_E2.Size = new System.Drawing.Size(123, 55);
+            this.But_Reset_Step_E2.TabIndex = 69;
+            this.But_Reset_Step_E2.Text = "Сброс шагов Е2";
+            this.But_Reset_Step_E2.UseVisualStyleBackColor = true;
+            this.But_Reset_Step_E2.Click += new System.EventHandler(this.But_Reset_Step_E2_Click);
+            // 
+            // StartBut
+            // 
+            this.StartBut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.StartBut.Location = new System.Drawing.Point(6, 485);
+            this.StartBut.Name = "StartBut";
+            this.StartBut.Size = new System.Drawing.Size(98, 51);
+            this.StartBut.TabIndex = 68;
+            this.StartBut.Text = "Старт";
+            this.StartBut.UseVisualStyleBackColor = false;
+            this.StartBut.Click += new System.EventHandler(this.StartBut_Click);
             // 
             // App_run
             // 
@@ -320,7 +356,7 @@ namespace HMI_KUKA_TSM
             this.label24.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label24.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label24.Location = new System.Drawing.Point(57, 210);
+            this.label24.Location = new System.Drawing.Point(59, 210);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(40, 19);
             this.label24.TabIndex = 60;
@@ -479,16 +515,6 @@ namespace HMI_KUKA_TSM
             this.label16.Size = new System.Drawing.Size(0, 16);
             this.label16.TabIndex = 46;
             // 
-            // StartBut
-            // 
-            this.StartBut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.StartBut.Location = new System.Drawing.Point(6, 485);
-            this.StartBut.Name = "StartBut";
-            this.StartBut.Size = new System.Drawing.Size(98, 51);
-            this.StartBut.TabIndex = 68;
-            this.StartBut.Text = "Старт";
-            this.StartBut.UseVisualStyleBackColor = false;
-            // 
             // HMI_Class
             // 
             this.Name = "HMI_Class";
@@ -526,7 +552,7 @@ namespace HMI_KUKA_TSM
                 Panel panel = new Panel();
                 panel.BorderStyle = BorderStyle.FixedSingle;
                 panel.Location = new Point(3, 60);
-                panel.Size = new Size(504, 422);
+                panel.Size = new Size(504, 540);
                 panel.TabIndex = 49;
                 if (numTable == 2)
                 {
@@ -638,47 +664,12 @@ namespace HMI_KUKA_TSM
 
                     labelStartPosY += stepPos;
                 }
-                if (numTable == 2)
-                {
-                    // 
-                    // But_Reset_Step_E2
-                    // 
-                    Button But_Reset_Step_E2 = new Button();
-                    But_Reset_Step_E2.Location = new System.Drawing.Point(405, 425);
-                    But_Reset_Step_E2.Font = new Font("Arial", 10, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204)));
-                    But_Reset_Step_E2.Name = "But_Reset_Step_E2";
-                    But_Reset_Step_E2.Size = new System.Drawing.Size(105, 50);
-                    But_Reset_Step_E2.TabIndex = 69;
-                    But_Reset_Step_E2.Text = "Сброс шагов Е2";
-                    But_Reset_Step_E2.UseVisualStyleBackColor = true;
-                    panel.Controls.Add(But_Reset_Step_E2);
-                }
-                else if (numTable == 3)
-                {
-                    // 
-                    // But_Reset_Step_E3
-                    // 
-                    Button But_Reset_Step_E3 = new Button();
-                    But_Reset_Step_E3.Location = new System.Drawing.Point(405, 425);
-                    But_Reset_Step_E3.Font = new Font("Arial", 10, FontStyle.Regular, GraphicsUnit.Point, ((byte)(204)));
-                    But_Reset_Step_E3.Name = "But_Reset_Step_E3";
-                    But_Reset_Step_E3.Size = new System.Drawing.Size(105, 50);
-                    But_Reset_Step_E3.TabIndex = 51;
-                    But_Reset_Step_E3.Text = "Сброс шагов Е3";
-                    But_Reset_Step_E3.UseVisualStyleBackColor = true;
-
-                    panel.Controls.Add(But_Reset_Step_E3);
-                }
                 
             }
             catch (Exception ex)
             {
-                richTextBox1.Text += ex.Message + "\n";
+                //richTextBox1.Text += ex.Message + "\n";
             }
-        }
-        private void updStateSteps()
-        {
-
         }
         protected override void Dispose(bool disposing)
         {
@@ -699,6 +690,7 @@ namespace HMI_KUKA_TSM
             {
                 if (Convert.ToBoolean(KrcVariableCommands.ShowVar("RESET_STEPS_E2"))) { KrcVariableCommands.SetVar("RESET_STEPS_E2", "false"); }
                 if (Convert.ToBoolean(KrcVariableCommands.ShowVar("RESET_STEPS_E3"))) { KrcVariableCommands.SetVar("RESET_STEPS_E3", "false"); }
+                if (Convert.ToBoolean(KrcVariableCommands.ShowVar("START_BUT"))) { KrcVariableCommands.SetVar("START_BUT", "false"); }
 
                 bool inhome = Convert.ToBoolean(KrcVariableCommands.ShowVar("$IN_HOME"));
                 if (inhome){ State_In_Home.BackColor = Color.Green;}else State_In_Home.BackColor = Color.Red;
@@ -802,7 +794,7 @@ namespace HMI_KUKA_TSM
             }
             catch (Exception ex)
             {
-                richTextBox1.Text += ex.Message + "\n";
+                //richTextBox1.Text += ex.Message + "\n";
             }
             finally
             {
@@ -820,15 +812,16 @@ namespace HMI_KUKA_TSM
                 if (tabControl1.SelectedIndex == 1 && steps_E2 != Step_E2_Old)
                 {
                     Step_E2_Old = steps_E2;
-                    //stepsE2.Controls.Clear();
-                    //drawStepsState(Convert.ToInt32(KrcVariableCommands.ShowVar("STEPS_E2")), 2);
+                    stepsE2.Controls.Clear();
+                    drawStepsState(Convert.ToInt32(KrcVariableCommands.ShowVar("STEPS_E2")), 2);
                 }
-                else if (tabControl1.SelectedIndex == 2 && steps_E3 != Step_E3_Old)
+                if (tabControl1.SelectedIndex == 2 && steps_E3 != Step_E3_Old)
                 {
                     Step_E3_Old = steps_E3;
-                    //stepsE3.Controls.Clear();
-                    //drawStepsState(Convert.ToInt32(KrcVariableCommands.ShowVar("STEPS_E3")), 3);
+                    stepsE3.Controls.Clear();
+                    drawStepsState(Convert.ToInt32(KrcVariableCommands.ShowVar("STEPS_E3")), 3);
                 }
+
                 for (int i = 0; i < numElementStep; i++)
                 {
                     if (Convert.ToBoolean(KrcVariableCommands.ShowVar(labelVarStep[i])))
@@ -856,6 +849,7 @@ namespace HMI_KUKA_TSM
             Update_Var.Enabled = true;
             drawStepsState(Convert.ToInt32(KrcVariableCommands.ShowVar("STEPS_E2")), 2);
             drawStepsState(Convert.ToInt32(KrcVariableCommands.ShowVar("STEPS_E3")), 3);
+            Step_Timer.Enabled = true;
         }//Загрузка формы
         private void But_Reset_Step_E2_Click(object sender, EventArgs e)//Сброс шагов стола Е2
         {
@@ -866,24 +860,9 @@ namespace HMI_KUKA_TSM
             KrcVariableCommands.SetVar("RESET_STEPS_E3", "true");
         }
 
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        private void StartBut_Click(object sender, EventArgs e)
         {
-            if (tabControl1.SelectedIndex == 1)
-            {
-                Step_Timer.Enabled = false;
-            }
-            if (tabControl1.SelectedIndex == 1)
-            {
-                Step_Timer.Enabled = true;
-               // stepsE2.Controls.Clear();
-               // drawStepsState(Convert.ToInt32(KrcVariableCommands.ShowVar("STEPS_E2")), 2);
-            }
-            else if (tabControl1.SelectedIndex == 2)
-            {
-                Step_Timer.Enabled = true;
-               // stepsE3.Controls.Clear();
-               // drawStepsState(Convert.ToInt32(KrcVariableCommands.ShowVar("STEPS_E3")), 3);
-            }
+            KrcVariableCommands.SetVar("START_BUT", "true");
         }
     }
 }
