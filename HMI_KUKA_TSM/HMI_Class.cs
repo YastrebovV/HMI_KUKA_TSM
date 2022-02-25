@@ -698,7 +698,7 @@ namespace HMI_KUKA_TSM
                 bool pos_table_0 = Convert.ToBoolean(KrcVariableCommands.ShowVar("$AXWORKSTATE1"));
                 bool pos_table_180 = Convert.ToBoolean(KrcVariableCommands.ShowVar("$AXWORKSTATE2"));
 
-                bool app_run = Convert.ToBoolean(KrcVariableCommands.ShowVar("$OUT[APPL_RUN]"));
+                bool app_run = Convert.ToBoolean(KrcVariableCommands.ShowVar("$APPL_RUN"));
                 if (app_run) { App_run.BackColor = Color.Green; } else App_run.BackColor = Color.Red;
 
                 label24.Text = Convert.ToString(Math.Truncate(Convert.ToDouble(KrcVariableCommands.ShowVar("$AXIS_ACT.E2")))) + "°";
@@ -853,7 +853,13 @@ namespace HMI_KUKA_TSM
         }//Загрузка формы
         private void But_Reset_Step_E2_Click(object sender, EventArgs e)//Сброс шагов стола Е2
         {
-            KrcVariableCommands.SetVar("RESET_STEPS_E2", "true");
+            if (Convert.ToBoolean(KrcVariableCommands.ShowVar("$IN_HOME")) &&
+                Convert.ToBoolean(KrcVariableCommands.ShowVar("$AXWORKSTATE3")) &&
+                Convert.ToBoolean(KrcVariableCommands.ShowVar("$AXWORKSTATE4")) &&
+                !Convert.ToBoolean(KrcVariableCommands.ShowVar("$APPL_RUN")))
+            {
+                KrcVariableCommands.SetVar("RESET_STEPS_E2", "true");
+            }
         }
         private void But_Reset_Step_E3_Click(object sender, EventArgs e)//Сброс шагов стола Е3
         {
@@ -862,7 +868,13 @@ namespace HMI_KUKA_TSM
 
         private void StartBut_Click(object sender, EventArgs e)
         {
-            KrcVariableCommands.SetVar("START_BUT", "true");
+            if (Convert.ToBoolean(KrcVariableCommands.ShowVar("$IN_HOME")) &&
+                Convert.ToBoolean(KrcVariableCommands.ShowVar("$AXWORKSTATE3")) &&
+                Convert.ToBoolean(KrcVariableCommands.ShowVar("$AXWORKSTATE4")) &&
+                !Convert.ToBoolean(KrcVariableCommands.ShowVar("$APPL_RUN")))
+            {
+                KrcVariableCommands.SetVar("START_BUT", "true");
+            }
         }
     }
 }
