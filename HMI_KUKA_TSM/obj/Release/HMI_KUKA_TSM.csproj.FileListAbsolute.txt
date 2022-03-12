@@ -61,3 +61,17 @@ E:\PROGRAMMING\GIT\HMI_KUKA_TSM\HMI_KUKA_TSM\HMI_KUKA_TSM\bin\Release\PlugInBase
 E:\PROGRAMMING\GIT\HMI_KUKA_TSM\HMI_KUKA_TSM\HMI_KUKA_TSM\bin\Release\S7.Net.dll
 E:\PROGRAMMING\GIT\HMI_KUKA_TSM\HMI_KUKA_TSM\HMI_KUKA_TSM\bin\Release\S7.Net.xml
 E:\PROGRAMMING\GIT\HMI_KUKA_TSM\HMI_KUKA_TSM\HMI_KUKA_TSM\obj\Release\HMI_KUKA_TSM.csprojResolveAssemblyReference.cache
+D:\visual studio 2015\HMI\HMI_KUKA_TSM\HMI_KUKA_TSM\HMI_KUKA_TSM\bin\Release\HMI_KUKA_TSM.dll
+D:\visual studio 2015\HMI\HMI_KUKA_TSM\HMI_KUKA_TSM\HMI_KUKA_TSM\bin\Release\HMI_KUKA_TSM.pdb
+D:\visual studio 2015\HMI\HMI_KUKA_TSM\HMI_KUKA_TSM\HMI_KUKA_TSM\bin\Release\KukaRoboter.LegacyKrcServiceLib.dll
+D:\visual studio 2015\HMI\HMI_KUKA_TSM\HMI_KUKA_TSM\HMI_KUKA_TSM\bin\Release\PlugInBase.dll
+D:\visual studio 2015\HMI\HMI_KUKA_TSM\HMI_KUKA_TSM\HMI_KUKA_TSM\bin\Release\S7.Net.dll
+D:\visual studio 2015\HMI\HMI_KUKA_TSM\HMI_KUKA_TSM\HMI_KUKA_TSM\bin\Release\S7.Net.xml
+D:\visual studio 2015\HMI\HMI_KUKA_TSM\HMI_KUKA_TSM\HMI_KUKA_TSM\obj\Release\HMI_KUKA_TSM.csprojAssemblyReference.cache
+D:\visual studio 2015\HMI\HMI_KUKA_TSM\HMI_KUKA_TSM\HMI_KUKA_TSM\obj\Release\HMI_KUKA_TSM.HMI_Class.resources
+D:\visual studio 2015\HMI\HMI_KUKA_TSM\HMI_KUKA_TSM\HMI_KUKA_TSM\obj\Release\HMI_KUKA_TSM.Properties.Resources.resources
+D:\visual studio 2015\HMI\HMI_KUKA_TSM\HMI_KUKA_TSM\HMI_KUKA_TSM\obj\Release\HMI_KUKA_TSM.csproj.GenerateResource.cache
+D:\visual studio 2015\HMI\HMI_KUKA_TSM\HMI_KUKA_TSM\HMI_KUKA_TSM\obj\Release\HMI_KUKA_TSM.csproj.CoreCompileInputs.cache
+D:\visual studio 2015\HMI\HMI_KUKA_TSM\HMI_KUKA_TSM\HMI_KUKA_TSM\obj\Release\HMI_KUKA_TSM.csproj.CopyComplete
+D:\visual studio 2015\HMI\HMI_KUKA_TSM\HMI_KUKA_TSM\HMI_KUKA_TSM\obj\Release\HMI_KUKA_TSM.dll
+D:\visual studio 2015\HMI\HMI_KUKA_TSM\HMI_KUKA_TSM\HMI_KUKA_TSM\obj\Release\HMI_KUKA_TSM.pdb

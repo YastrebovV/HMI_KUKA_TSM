@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Collections;
+using System.Diagnostics;
 using System.ComponentModel;
 using System.Drawing;
 using System.Data;
@@ -71,8 +72,7 @@ namespace HMI_KUKA_TSM
         private Panel panel1;
         private RadioButton rb_b13;
         private RadioButton rb_b11;
-        private Label label4;
-        private Label label5;
+        private Button CorrBut;
         bool Error = false; 
 
         public HMI_Class(DispMode displayMode, CmdBarMode commandBarMode) : base(displayMode, commandBarMode)
@@ -88,8 +88,7 @@ namespace HMI_KUKA_TSM
             this.Main_panel = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.CorrBut = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.rb_b13 = new System.Windows.Forms.RadioButton();
@@ -119,19 +118,19 @@ namespace HMI_KUKA_TSM
             this.State_Part3_E2 = new System.Windows.Forms.Panel();
             this.State_Part2_E2 = new System.Windows.Forms.Panel();
             this.State_Part1_E2 = new System.Windows.Forms.Panel();
+            this.E1_0_180 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.stepsE2 = new System.Windows.Forms.TabPage();
             this.stepsE3 = new System.Windows.Forms.TabPage();
             this.label16 = new System.Windows.Forms.Label();
-            this.E1_0_180 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.childPanel.SuspendLayout();
             this.Main_panel.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.stepsE3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.E1_0_180)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.stepsE3.SuspendLayout();
             this.SuspendLayout();
             // 
             // childPanel
@@ -182,8 +181,7 @@ namespace HMI_KUKA_TSM
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.LightGray;
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.CorrBut);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.But_Reset_Step_E3);
@@ -220,23 +218,17 @@ namespace HMI_KUKA_TSM
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Основные";
             // 
-            // label5
+            // CorrBut
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(131, 527);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 20);
-            this.label5.TabIndex = 77;
-            this.label5.Text = "label5";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(132, 500);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 20);
-            this.label4.TabIndex = 76;
-            this.label4.Text = "label4";
+            this.CorrBut.BackColor = System.Drawing.Color.OrangeRed;
+            this.CorrBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CorrBut.Location = new System.Drawing.Point(381, 585);
+            this.CorrBut.Name = "CorrBut";
+            this.CorrBut.Size = new System.Drawing.Size(123, 44);
+            this.CorrBut.TabIndex = 78;
+            this.CorrBut.Text = "Корректировать";
+            this.CorrBut.UseVisualStyleBackColor = false;
+            this.CorrBut.Click += new System.EventHandler(this.CorrBut_Click);
             // 
             // label3
             // 
@@ -545,36 +537,6 @@ namespace HMI_KUKA_TSM
             this.State_Part1_E2.Size = new System.Drawing.Size(15, 15);
             this.State_Part1_E2.TabIndex = 45;
             // 
-            // stepsE2
-            // 
-            this.stepsE2.BackColor = System.Drawing.Color.LightGray;
-            this.stepsE2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stepsE2.Location = new System.Drawing.Point(4, 4);
-            this.stepsE2.Name = "stepsE2";
-            this.stepsE2.Padding = new System.Windows.Forms.Padding(3);
-            this.stepsE2.Size = new System.Drawing.Size(510, 642);
-            this.stepsE2.TabIndex = 1;
-            this.stepsE2.Text = "Шаги Е2";
-            // 
-            // stepsE3
-            // 
-            this.stepsE3.BackColor = System.Drawing.Color.LightGray;
-            this.stepsE3.Controls.Add(this.label16);
-            this.stepsE3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stepsE3.Location = new System.Drawing.Point(4, 4);
-            this.stepsE3.Name = "stepsE3";
-            this.stepsE3.Size = new System.Drawing.Size(510, 642);
-            this.stepsE3.TabIndex = 2;
-            this.stepsE3.Text = "Шаги Е3";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(13, 42);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(0, 16);
-            this.label16.TabIndex = 46;
-            // 
             // E1_0_180
             // 
             this.E1_0_180.BackgroundImage = global::HMI_KUKA_TSM.Properties.Resources.E1180;
@@ -597,6 +559,36 @@ namespace HMI_KUKA_TSM
             this.pictureBox1.TabIndex = 65;
             this.pictureBox1.TabStop = false;
             // 
+            // stepsE2
+            // 
+            this.stepsE2.BackColor = System.Drawing.Color.LightGray;
+            this.stepsE2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stepsE2.Location = new System.Drawing.Point(4, 4);
+            this.stepsE2.Name = "stepsE2";
+            this.stepsE2.Padding = new System.Windows.Forms.Padding(3);
+            this.stepsE2.Size = new System.Drawing.Size(510, 635);
+            this.stepsE2.TabIndex = 1;
+            this.stepsE2.Text = "Шаги Е2";
+            // 
+            // stepsE3
+            // 
+            this.stepsE3.BackColor = System.Drawing.Color.LightGray;
+            this.stepsE3.Controls.Add(this.label16);
+            this.stepsE3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stepsE3.Location = new System.Drawing.Point(4, 4);
+            this.stepsE3.Name = "stepsE3";
+            this.stepsE3.Size = new System.Drawing.Size(510, 635);
+            this.stepsE3.TabIndex = 2;
+            this.stepsE3.Text = "Шаги Е3";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(13, 42);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(0, 16);
+            this.label16.TabIndex = 46;
+            // 
             // HMI_Class
             // 
             this.Name = "HMI_Class";
@@ -609,10 +601,10 @@ namespace HMI_KUKA_TSM
             this.tabPage1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.stepsE3.ResumeLayout(false);
-            this.stepsE3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.E1_0_180)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.stepsE3.ResumeLayout(false);
+            this.stepsE3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -912,7 +904,7 @@ namespace HMI_KUKA_TSM
                     drawStepsState(Convert.ToInt32(KrcVariableCommands.ShowVar("STEPS_E3")), 3, out panelStepsE3, out labelVarStepE3);
                 }
 
-                label4.Text = labelVarStepE2[0];
+                //label4.Text = labelVarStepE2[0];
                 int count_temp = 0;
                 for (int i = 0; i < labelVarStepE2.Length; i++)
                 {                  
@@ -924,7 +916,7 @@ namespace HMI_KUKA_TSM
                         panelStepsE2[i].BackColor = Color.Red;
                     }
                     count_temp++;
-                    label5.Text = Convert.ToString(count_temp);
+                    //label5.Text = Convert.ToString(count_temp);
                 }
 
                 
@@ -1038,5 +1030,9 @@ namespace HMI_KUKA_TSM
             }
         }
 
+        private void CorrBut_Click(object sender, EventArgs e)
+        {
+            Process.Start(Application.StartupPath + "\\CorrWeldTSM.exe", "");
+        }
     }
 }
