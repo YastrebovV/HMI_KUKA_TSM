@@ -772,27 +772,37 @@ namespace HMI_KUKA_TSM
                 if (Convert.ToBoolean(KrcVariableCommands.ShowVar("START_BUT"))) { KrcVariableCommands.SetVar("START_BUT", "false"); }
 
                 bool inhome = Convert.ToBoolean(KrcVariableCommands.ShowVar("$IN_HOME"));
-                if (inhome){ State_In_Home.BackColor = Color.Green;}else State_In_Home.BackColor = Color.Red;
+                if (inhome){
+                    State_In_Home.BackColor = Color.Green;
+                }
+                else State_In_Home.BackColor = Color.Red;
 
                 bool pos_table_0 = Convert.ToBoolean(KrcVariableCommands.ShowVar("$AXWORKSTATE1"));
                 bool pos_table_180 = Convert.ToBoolean(KrcVariableCommands.ShowVar("$AXWORKSTATE2"));
 
                 bool app_run = Convert.ToBoolean(KrcVariableCommands.ShowVar("$OUT[34]"));
-                if (app_run) { App_run.BackColor = Color.Green; } else App_run.BackColor = Color.Red;
+                if (app_run) {
+                    App_run.BackColor = Color.Green;
+                }
+                else App_run.BackColor = Color.Red;
 
-                string[] axis_act_e23 = new string[2];
-                axis_act_e23 = KrcVariableCommands.ShowVar("$AXIS_ACT.E2").Split('.');
-                label24.Text = axis_act_e23[0] + "°";
-                axis_act_e23 = KrcVariableCommands.ShowVar("$AXIS_ACT.E3").Split('.');               
-                label25.Text = axis_act_e23[0] + "°";
-
-                if (pos_table_0) { label6.Text = ":0°"; }
-                if (pos_table_180) { label6.Text = ":180°"; }
+                string[] axis_act_e2 = new string[2];
+                string[] axis_act_e3 = new string[2];
+                axis_act_e2 = KrcVariableCommands.ShowVar("$AXIS_ACT.E2").Split('.');
+                if (axis_act_e2[1].Contains("E"))
+                    axis_act_e2[0] = "0";
+                axis_act_e3 = KrcVariableCommands.ShowVar("$AXIS_ACT.E3").Split('.');
+                if (axis_act_e3[1].Contains("E"))
+                    axis_act_e3[0] = "0";
 
                 if (pos_table_0)
                 {
                     E1_0_180.Image = Properties.Resources.E10;
                     E1_0_180.Refresh();
+
+                    label6.Text = ":0°";
+                    label24.Text = axis_act_e2[0] + "°";
+                    label25.Text = axis_act_e3[0] + "°";
 
                     if (Convert.ToBoolean(KrcVariableCommands.ShowVar("$OUT[503]")) == false)
                     {
@@ -823,6 +833,10 @@ namespace HMI_KUKA_TSM
                 {
                     E1_0_180.Image = Properties.Resources.E1180;
                     E1_0_180.Refresh();
+
+                    label6.Text = ":180°";
+                    label24.Text = axis_act_e3[0] + "°";
+                    label25.Text = axis_act_e2[0] + "°";
 
                     if (Convert.ToBoolean(KrcVariableCommands.ShowVar("$OUT[503]")) == false)
                     {
@@ -904,7 +918,7 @@ namespace HMI_KUKA_TSM
                     drawStepsState(Convert.ToInt32(KrcVariableCommands.ShowVar("STEPS_E3")), 3, out panelStepsE3, out labelVarStepE3);
                 }
 
-                //label4.Text = labelVarStepE2[0];
+               // label4.Text = labelVarStepE2[0];
                 int count_temp = 0;
                 for (int i = 0; i < labelVarStepE2.Length; i++)
                 {                  
@@ -916,12 +930,12 @@ namespace HMI_KUKA_TSM
                         panelStepsE2[i].BackColor = Color.Red;
                     }
                     count_temp++;
-                    //label5.Text = Convert.ToString(count_temp);
+                  //  label5.Text = Convert.ToString(count_temp);
                 }
 
                 
 
-                //label5.Text = labelVarStepE3[0];
+              //  label5.Text = labelVarStepE3[0];
                 for (int i = 0; i < labelVarStepE3.Length; i++)
                 {
                     if (Convert.ToBoolean(KrcVariableCommands.ShowVar(labelVarStepE3[i])))
@@ -934,7 +948,7 @@ namespace HMI_KUKA_TSM
                     }
                     count_temp++;
                 }
-                //label5.Text = label5.Text + " -- " + Convert.ToString(count_temp);
+              //  label5.Text = label5.Text + " -- " + Convert.ToString(count_temp);
 
                 Step_Timer.Enabled = true;
             }
@@ -950,10 +964,11 @@ namespace HMI_KUKA_TSM
         {
             try
             {
-                if (Convert.ToBoolean(KrcVariableCommands.ShowVar("B12")))
+                if (!Convert.ToBoolean(KrcVariableCommands.ShowVar("B13")))
                     rb_b11.Checked = true;
                 if (Convert.ToBoolean(KrcVariableCommands.ShowVar("B13")))
                     rb_b13.Checked = true;
+
                 Update_Var.Enabled = true;
                 drawStepsState(Convert.ToInt32(KrcVariableCommands.ShowVar("STEPS_E2")), 2, out panelStepsE2, out labelVarStepE2);
                 drawStepsState(Convert.ToInt32(KrcVariableCommands.ShowVar("STEPS_E3")), 3, out panelStepsE3, out labelVarStepE3);
